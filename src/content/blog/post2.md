@@ -1,6 +1,6 @@
 ---
 title: "New song from Morgana,’I’m Not Going Anywhere’"
-image: "/images/morgana-photo-6.webp"
+image: "/images/morgana-photo-5.webp"
 excerpt: "Discover Morgana's New Single and What Inspired Her."
 ---
 
