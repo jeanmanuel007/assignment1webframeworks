@@ -1,0 +1,53 @@
+---
+const { title = "Morgana" } = Astro.props;
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="/" class="logo">Morgana</a>
+
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/playlist">Music</a></li>
+      </ul>
+    </div>
+  </nav>
+  <slot />
+  <footer>
+    <div class="container">
+      <h3>Morgana</h3>
+      <p>Soulful Sounds • Technicoloured & Tearful Disco Vibes</p>
+
+      <div class="social-links">
+        <a href="https://open.spotify.com/artist/2qYwadDTn22zMJ9Q26ke0d"><i class="fab fa-spotify"></i></a>
+        <a href="https://x.com/morganasparty"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/@morganaspartyhits"><i class="fab fa-youtube"></i></a>
+        <a href="https://instagram.com/morganaspartyhits"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@morganaspartyhits"><i class="fab fa-tiktok"></i></a>
+      </div>
+
+      <p>&copy; 2025 Morgana. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

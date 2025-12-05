@@ -1,0 +1,71 @@
+---
+import Layout from "../components/layout.astro";
+---
+
+<Layout title="Morgana - Playlist">
+<section class="playlist-section">
+  <div class="container">
+    <h1 class="text-center">Morgana's Playlist</h1>
+
+    <form id="songForm" class="song-form">
+      <input id="songInput" class="song-input" type="text" placeholder="Add your song..." />
+      <button class="btn btn-primary" type="submit">Add Song</button>
+    </form>
+
+    <button id="shuffleBtn" class="btn btn-secondary"><i class="fas fa-random"></i> Shuffle Playlist</button>
+
+    <ul id="playlist" class="playlist">
+    </ul>
+  </div>
+</section>
+
+<script>
+let songs = [
+  "Im Not Going Anywhere - Morgana",
+  "Power Cuts - Morgana",
+  "Party Killer - Morgana"
+];
+
+function updatePlaylist() {
+  const playlist = document.getElementById("playlist");
+  playlist.innerHTML = "";
+
+  for (let i = 0; i < songs.length; i++) {
+    const li = document.createElement("li");
+    li.innerHTML = "<i class='fas fa-music'></i> " + songs[i];
+    playlist.appendChild(li);
+  }
+}
+
+const songForm = document.getElementById("songForm");
+const songInput = document.getElementById("songInput");
+
+songForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const newSong = songInput.value;
+  songs.push(newSong);
+
+  updatePlaylist();
+  songInput.value = "";
+});
+
+document.getElementById("shuffleBtn").addEventListener("click", function() {
+  for (let i = 0; i < songs.length; i++) {
+    const randomIndex = Math.floor(Math.random() * songs.length);
+
+    let temp = songs[i];
+    songs[i] = songs[randomIndex];
+    songs[randomIndex] = temp;
+  }
+
+  updatePlaylist();
+});
+
+updatePlaylist();
+</script>
+
+
+
+</Layout>
+

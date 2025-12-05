@@ -1,0 +1,40 @@
+---
+import Layout from "../components/layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+---
+
+<Layout title="Morgana - News & Tours">
+
+<section class="container">
+  <h1 class="text-center">News & Tour Dates</h1>
+
+  <div class="blog-grid">
+
+    {
+      posts.map(post => (
+        <div class="blog-card">
+          <img src={post.data.image} alt={post.data.title} class="blog-image"/>
+
+          <div class="blog-content">
+            <h3>{post.data.title}</h3>
+            <p>{post.data.excerpt}</p>
+
+          <article class="blog-body">
+            {post.body}
+          </article>
+
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="text-center" style="margin-top: 30px;">
+    <a href="/playlist" class="btn btn-primary">Playlist</a>
+  </div>
+
+</section>
+
+</Layout>

@@ -1,0 +1,366 @@
+/* Created by Juan Manuel Ayala Pereira - Web Frameworks Assignment */
+/* Student ID 3166715 */
+
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FAF9EE;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Nav */
+nav {
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-links a.active {
+    color: #9c27b0;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 80px;
+    font-weight: 900;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 680px;
+    border-radius: 20px;
+    margin: 30px auto;
+    display: block;
+}
+
+.style-highlight {
+    background: linear-gradient(135deg, rgba(255, 200, 87, 0.2), rgba(163, 177, 138, 0.2));
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    border: 1px solid rgba(255, 200, 87, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+/* Features */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.feature-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* About */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.text-center {
+    margin-top: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Responsive Grid of the About Section */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Stats Grid with Personalisation of my content*/
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    padding: 25px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+.stat-item h3 {
+  margin: 10px 0;
+}
+
+.stat-item i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #9c27b0;
+    opacity: 0.9;
+}
+
+
+/* Blog Cards */
+.blog-grid {
+    display: grid;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.blog-image {
+    width: 100%;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-body p {
+    margin-bottom: 15px;
+}
+
+/* Playlist */
+.playlist-section {
+    padding: 60px 0;
+}
+
+.song-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+.song-input {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.playlist {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.playlist li {
+    padding: 12px;
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: #9c27b0;
+    color: white;
+}
+
+.btn-primary:hover {
+  background: #7c1f8e;
+}
+
+.btn-secondary {
+    background: #eee;
+    color: #333;
+}
+
+.btn-secondary:hover {
+  background: #ddd;
+}
+
+/* Footer */
+footer {
+    background: #fff;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.social-links a {
+    color: #333;
+    margin: 0 10px;
+    font-size: 22px;
+}
+
+
+/* Sources, Inspiration, News source, Tutorials
+Examples and Sources for the project
+https://www.aviva.ie/
+https://morgana.ie/
+https://www.othervoices.ie/artists/morgana
+https://webflow.com/blog/retro-website
+https://www.w3schools.com/java/java_arrays.asp
+https://www.w3schools.com/java/java_variables_final.asp
+https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+
+Post Inspiration and Sources
+https://www.thelineofbestfit.com/tracks/morgana-nothing-kills-a-party-like-a-song
+https://nialler9.com/the-new-song-from-morganaim-not-going-anywhere-is-an-electro-pop-persistence-anthem/
+https://www.thelineofbestfit.com/tracks/morgana-nothing-kills-a-party-like-a-song
+
+
+MDN
+https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img
+https://www.w3schools.com/css/css_rwd_images.asp
+https://www.w3schools.com/css/default.asp
+https://www.w3schools.com/html/html5_semantic_elements.asp
+
+Responsive Nav
+https://stackoverflow.com/questions/68771014/how-do-you-script-an-addeventlistener-to-toggle-back-a-hamburger-menu-in-javascr
+https://www.youtube.com/watch?v=At4B7A4GOPg
+https://stackoverflow.com/questions/57266515/media-screen-and-max-width768px-not-working
+
+Grids
+https://www.w3schools.com/css/css_grid.asp
+https://www.youtube.com/watch?v=rg7Fvvl3taU
+https://www.youtube.com/watch?v=1PnVor36_40
+https://www.w3schools.com/css/css_grid.asp
+https://www.w3schools.com/cssref/pr_grid-column.php
+https://www.w3schools.com/cssref/tryit.php?filename=trycss_grid-column
+https://www.w3schools.com/css/css_grid_tracks.asp
+https://www.w3schools.com/css/tryit.asp?filename=trycss_grid-template-columns_repeat
+https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_grid-template-rows
+https://www.w3schools.com/css/css_display_visibility.asp
+https://www.w3schools.com/css/css_positioning.asp
+
+Blog
+https://docs.astro.build/en/tutorial/6-islands/4/
+
+Astro Sources
+https://docs.astro.build/en/core-concepts/astro-components/
+https://docs.astro.build/en/guides/content-collections/
+https://astro-imagetools-docs.vercel.app/en/markdown-images/
+
+Playlist
+https://docs.astro.build/en/guides/upgrade-to/v5/#changed-disturl-is-now-an-array-integrations-api
+https://docs.astro.build/en/reference/publish-to-npm/
+
+Animations for the Website to give it more life
+https://www.w3schools.com/css/css3_animations.asp
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations
+https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+https://www.w3schools.com/cssref/css3_pr_transform.asp
+https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+https://www.w3schools.com/css/css3_buttons.asp
+https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
+https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate
+
+
+*/
+

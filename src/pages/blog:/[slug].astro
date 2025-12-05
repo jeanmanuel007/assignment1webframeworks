@@ -1,0 +1,32 @@
+---
+import Layout from "../../components/layout.astro";
+import { getCollection } from "astro:content";
+
+const { slug } = Astro.params;
+
+const posts = await getCollection("blog");
+
+const post = posts.find((p) => p.slug === slug);
+
+if (!post) {
+  throw new Error(`Post not found for slug: ${slug}`);
+}
+---
+
+<Layout title={post.data.title}>
+
+  <section class="container blog-post">
+    <h1>{post.data.title}</h1>
+
+    <img src={post.data.image} alt={post.data.title} class="blog-post-image" />
+
+    <article class="blog-body">
+      {post.body}
+    </article>
+
+    <a href="/news" class="btn btn-secondary" style="margin-top:30px;">
+      ← Back to News
+    </a>
+  </section>
+
+</Layout>

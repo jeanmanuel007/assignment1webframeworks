@@ -1,16 +1,40 @@
 ---
-
+import Layout from "../components/layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Morgana - Home">
+
+<section class="hero">
+  <div class="container">
+    <h1>Morgana</h1>
+    <p class="hero-subtitle">Soulful Sounds • Synth-pop Vibes</p>
+
+    <img src="/images/morgana-photo-5.jpg" alt="Morgana performing" class="hero-image" />
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <i class="fas fa-compact-disc"></i>
+        <h3>New Single</h3>
+        <p>"I'm not Going Anywhere" out now!</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fas fa-microphone-alt"></i>
+        <h3>Live Shows</h3>
+        <p>2025 tour announced. Get your ticket now!</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fas fa-music"></i>
+        <h3>Stay Tuned</h3>
+        <p>Follow Morgana on social media.</p>
+      </div>
+    </div>
+
+    <a href="/about" class="btn btn-primary">About Morgana</a>
+  </div>
+</section>
+
+</Layout>
+
+
