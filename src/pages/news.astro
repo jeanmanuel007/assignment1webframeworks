@@ -21,9 +21,13 @@ const posts = await getCollection("blog");
             <h3>{post.data.title}</h3>
             <p>{post.data.excerpt}</p>
 
-          <article class="blog-body">
+          <article class="blog-body collapsed" data-body>
             {post.body}
           </article>
+
+          <button class="btn btn-secondary read-toggle" type="button" data-toggle>
+            Read more
+          </button>
 
           </div>
         </div>
@@ -38,3 +42,18 @@ const posts = await getCollection("blog");
 </section>
 
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.blog-card').forEach((card) => {
+      const body = card.querySelector('[data-body]');
+      const toggle = card.querySelector('[data-toggle]');
+      if (!body || !toggle) return;
+
+      toggle.addEventListener('click', () => {
+        const isCollapsed = body.classList.toggle('collapsed');
+        toggle.textContent = isCollapsed ? 'Read more' : 'Read less';
+      });
+    });
+  });
+</script>
