@@ -1,6 +1,6 @@
 ---
 title: "Morgana in the All Together Now"
-image: "/images/morgana-photo-4.jpg"
+image: "/images/morgana-photo-6.webp"
 excerpt: ATN received Morgana with the open arms.
 ---
 
